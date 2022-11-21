@@ -20,6 +20,7 @@ public class Main {
 			System.out.println("Escolha uma das opções abaixo: ");
 			System.out.println("1 - Cadastrar Postagem.");
 			System.out.println("2 - Comentar Postagem.");
+			System.out.println("0 - Sair.");
 			opcao = input.nextInt();
 			redirect(opcao);		
 		}while(opcao != 0);
@@ -32,7 +33,11 @@ public class Main {
 			case 1:
 				System.out.println("Digite o titulo da postagem: ");
 				String title = input.nextLine();
-				System.out.println(localizarPostagem(title));
+				if(localizarPostagem(title) == null) {
+					cadastrarPostagem();
+				}else{
+					System.out.println("Postagem ja cadastrada!");
+				};
 				break;
 		}
 	}
@@ -66,6 +71,7 @@ public class Main {
 				Comment comment = new Comment(comentario);
 				post.addComment(comment);
 			}
+			
 		}
 	}
 }
