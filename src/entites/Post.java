@@ -1,6 +1,7 @@
 package entites;
 //importação de pacotes:
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Post {
@@ -9,7 +10,7 @@ public class Post {
 	private String content;
 	private Integer likes = 0;
 
-	private List<Comment> comments;
+	private List<Comment> comments = new ArrayList<>();
 	
 	public Post() {
 	}
