@@ -55,7 +55,7 @@ public class Post {
 	public String todosComentarios() {
 		String comentarios = "";
 		for(Comment comentario : comments) {
-			comentarios += comentario.toString();
+			comentarios += String.format("%n%s%n----------------%n",comentario.toString());
 		}
 		return comentarios;
 	}
